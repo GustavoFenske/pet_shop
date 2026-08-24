@@ -37,7 +37,7 @@ $resultado_usuarios = mysqli_query($conexao, $sql_select);
                 <?php while ($usuario = mysqli_fetch_assoc($resultado_usuarios)){ ?>
                     <option value="<?= $usuario['id'] ?>"><?= $usuario['nome'] ?></option>
                 <?php }?>
-                
+
     </select>
 
 
@@ -54,6 +54,34 @@ $resultado_usuarios = mysqli_query($conexao, $sql_select);
 
         <button type="submit">Cadastrar</button>
     </form>
+
+    <h2>PETS CADASTRADOS</h2>
+
+    <table>
+        <tr>
+            <th>Nome</th>
+            <th>Raça</th>
+            <th>Idade</th>
+        </tr>
+
+        <?php while ($pet = mysqli_fetch_assoc($resultado)) { ?>
+            <tr>
+                <td><?php echo htmlspecialchars($pet['nome']) ?></td>
+                <td><?php echo htmlspecialchars($pet['raca_pet']) ?></td>
+                <td><?php echo htmlspecialchars($pet['idade']) ?></td>
+            </tr>
+
+            <td>
+                <a href="editar_pet.php?id=<?= $pet['id'] ?>">Editar</a>
+                <a href="excluir_pet.php?id=<?= $pet['id'] ?>" onclick="return confirm('Tem certeza que deseja excluir este pet?')">Excluir</a>
+            </td>
+        <?php } ?>
+
+
+    </table>
+
+        <a href="../index.php">VOLTAR</a>
+
 </body>
 
 </html>
