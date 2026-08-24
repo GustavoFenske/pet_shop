@@ -62,12 +62,14 @@ $resultado = mysqli_query($conexao, $sql_select);
                 <td><?php echo $usuario['nome']; ?></td>
                 <td><?php echo $usuario['email']; ?></td>
                 <td><?php echo $usuario['telefone']; ?></td>
+                <td><?php echo $usuario['nome_pet']; ?></td>
+
             </tr>
 
              <td>
                   <a href="editar_usuario.php?id=<?php echo $usuario['id']; ?>">Editar</a> | 
                 <a href="excluir_usuario.php?id=<?php echo $usuario['id']; ?>" onclick="return confirm('Tem certeza que deseja excluir?');">Excluir</a>
-
+                <a href="associar_pet.php?id=<?php echo $usuario['id']; ?>">Associar PET</a>
                 </td>
 
         <?php } ?>

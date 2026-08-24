@@ -6,6 +6,9 @@ CREATE TABLE pets (
     nome VARCHAR(100) NOT NULL,
     raca_pet VARCHAR(50) NOT NULL,
     idade INT
+
+    id_usuario INT NULL,
+    foreign key (id_usuario) references usuarios(id)
 );
 
 CREATE TABLE usuarios (
@@ -15,6 +18,6 @@ CREATE TABLE usuarios (
     telefone VARCHAR(15) NOT NULL,
 
 
-    id_pet INT NOT NULL,
+    id_pet INT NULL,
     foreign key (id_pet) references pets(id)
 );

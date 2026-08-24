@@ -30,15 +30,6 @@ $resultado_usuarios = mysqli_query($conexao, $sql_select);
 
 <body>
     <header></header>
-    <label for="id">USARIO RESPONSAVEL</label>
-
-
-    <select name="id" id="id_usuario">
-                <?php while ($usuario = mysqli_fetch_assoc($resultado_usuarios)){ ?>
-                    <option value="<?= $usuario['id'] ?>"><?= $usuario['nome'] ?></option>
-                <?php }?>
-
-    </select>
 
 
     <h1>Cadastro de Pets</h1>
