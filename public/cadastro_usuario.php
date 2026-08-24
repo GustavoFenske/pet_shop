@@ -64,10 +64,16 @@ $resultado = mysqli_query($conexao, $sql_select);
                 <td><?php echo $usuario['telefone']; ?></td>
             </tr>
 
+             <td>
+                  <a href="editar_usuario.php?id=<?php echo $usuario['id']; ?>">Editar</a> | 
+                <a href="excluir_usuario.php?id=<?php echo $usuario['id']; ?>" onclick="return confirm('Tem certeza que deseja excluir?');">Excluir</a>
+
+                </td>
+
         <?php } ?>
     </table>
 
-
+    <a href="../index.php">VOLTAR</a>
 
 
 </body>
