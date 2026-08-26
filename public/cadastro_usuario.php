@@ -13,7 +13,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
 
-$sql_select = "SELECT * FROM usuarios";
+$sql_select = "SELECT usuarios.id, usuarios.nome, usuarios.email, usuarios.telefone,
+       GROUP_CONCAT(pets.nome SEPARATOR ', ') AS pets
+FROM usuarios
+LEFT JOIN pets ON pets.id_usuario = usuarios.id
+GROUP BY usuarios.id";
 $resultado = mysqli_query($conexao, $sql_select);
 
 ?>
@@ -30,6 +34,7 @@ $resultado = mysqli_query($conexao, $sql_select);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PET SHOP </title>
+    
 </head>
 <body>
     
@@ -54,6 +59,8 @@ $resultado = mysqli_query($conexao, $sql_select);
             <th>Nome</th>
             <th>Email</th>
             <th>Telefone</th>
+            <br>
+            <th>Pet</th>
         </tr>
 
 
@@ -62,7 +69,8 @@ $resultado = mysqli_query($conexao, $sql_select);
                 <td><?php echo $usuario['nome']; ?></td>
                 <td><?php echo $usuario['email']; ?></td>
                 <td><?php echo $usuario['telefone']; ?></td>
-                <td><?php echo $usuario['nome_pet']; ?></td>
+                <td><?php echo $usuario['nome']; ?></td>
+                <td><?php echo $usuario['pets'] ?? 'Nenhum'; ?></td>
 
             </tr>
 

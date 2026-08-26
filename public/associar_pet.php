@@ -4,14 +4,12 @@ require_once('../infra/conexao.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-    $id_usuario = $_POST['id_usuario'];
-    $id_pet = $_POST['id_pet'];
+   $id_usuario = $_POST['id_usuario'];
+$id_pet = $_POST['id_pet'];
 
-    $sql = "UPDATE usuarios
-            SET id_pet = '$id_pet'
-            WHERE id = '$id_usuario'";
+$sql = "UPDATE pets SET id_usuario = '$id_usuario' WHERE id = '$id_pet'";
 
-    $conexao->query($sql);
+$conexao->query($sql);
 
     header("Location: cadastro_usuario.php");
     exit;
