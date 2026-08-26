@@ -1,0 +1,799 @@
+/* =========================================================
+   RESET GERAL
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    background: #ffffff;
+    color: #222;
+}
+
+
+/* =========================================================
+   FAIXA COLORIDA DO TOPO
+   ========================================================= */
+
+body::before {
+    content: "";
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 6px;
+
+    background: linear-gradient(
+        to right,
+        #19a9b5 0%,
+        #19a9b5 20%,
+
+        #ff725c 20%,
+        #ff725c 40%,
+
+        #f7cf4b 40%,
+        #f7cf4b 60%,
+
+        #69c9c8 60%,
+        #69c9c8 80%,
+
+        #a77bdb 80%,
+        #a77bdb 100%
+    );
+
+    z-index: 1000;
+}
+
+
+/* =========================================================
+   =========================================================
+   INDEX.PHP
+   =========================================================
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   HEADER DO INDEX
+   --------------------------------------------------------- */
+
+.header {
+    width: 100%;
+    height: 70px;
+
+    background: #ffffff;
+
+    display: flex;
+    align-items: center;
+
+    padding-left: 40px;
+
+    border-bottom: 1px solid #eeeeee;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
+
+    position: relative;
+    z-index: 10;
+}
+
+
+/* ---------------------------------------------------------
+   LOGO
+   --------------------------------------------------------- */
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    text-decoration: none;
+}
+
+.logo-pata {
+    font-size: 38px;
+    line-height: 1;
+}
+
+.logo-texto h1 {
+    font-size: 22px;
+
+    font-weight: 900;
+
+    letter-spacing: 0.5px;
+
+    color: #19aeb8;
+}
+
+.logo-texto h1 span {
+    color: #ef664f;
+}
+
+.logo-texto p {
+    font-size: 10px;
+
+    color: #555;
+
+    margin-top: 1px;
+}
+
+
+/* ---------------------------------------------------------
+   ÁREA PRINCIPAL DO INDEX
+   --------------------------------------------------------- */
+
+.principal {
+    min-height: calc(100vh - 76px);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 70px;
+
+    padding: 50px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background-color: #ffffff;
+}
+
+
+/* ---------------------------------------------------------
+   DECORAÇÕES DO INDEX
+   --------------------------------------------------------- */
+
+.principal::before {
+    content: "";
+
+    position: absolute;
+
+    width: 250px;
+    height: 250px;
+
+    left: -110px;
+    bottom: -110px;
+
+    background-color: #19aeb8;
+
+    border-radius: 50%;
+}
+
+.principal::after {
+    content: "";
+
+    position: absolute;
+
+    width: 280px;
+    height: 280px;
+
+    right: -120px;
+    bottom: -130px;
+
+    background-color: #9c6bdb;
+
+    border-radius: 50%;
+}
+
+
+/* ---------------------------------------------------------
+   IMAGEM DO CACHORRO DO INDEX
+   --------------------------------------------------------- */
+
+.imagem-container {
+    width: 420px;
+    height: 360px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    z-index: 2;
+
+    background: #fafafa;
+
+    border-radius: 40px;
+
+    border: 3px solid #e9e9e9;
+
+    overflow: hidden;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.imagem-container img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* ---------------------------------------------------------
+   BOTÕES DO INDEX
+   --------------------------------------------------------- */
+
+.cadastros {
+    width: 450px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 25px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.botao {
+    width: 100%;
+
+    min-height: 100px;
+
+    padding: 18px 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    text-decoration: none;
+
+    border-radius: 22px;
+
+    color: white;
+
+    box-shadow: 0 7px 15px rgba(0, 0, 0, 0.15);
+
+    transition: 0.25s ease;
+}
+
+.botao.usuario {
+    background-color: #18aeb8;
+}
+
+.botao.pet {
+    background-color: #ff7058;
+}
+
+.botao:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 12px 22px rgba(0, 0, 0, 0.20);
+}
+
+
+/* ---------------------------------------------------------
+   ÍCONES DO INDEX
+   --------------------------------------------------------- */
+
+.botao .icone {
+    width: 60px;
+    height: 60px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(255, 255, 255, 0.25);
+
+    border-radius: 50%;
+
+    font-size: 30px;
+}
+
+
+/* ---------------------------------------------------------
+   TEXTO DOS BOTÕES
+   --------------------------------------------------------- */
+
+.botao .texto {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+}
+
+.botao .texto strong {
+    font-size: 20px;
+}
+
+.botao .texto span {
+    font-size: 14px;
+
+    opacity: 0.9;
+}
+
+
+/* =========================================================
+   =========================================================
+   CADASTRO_USUARIO.PHP
+   =========================================================
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   HEADER DO CADASTRO
+   --------------------------------------------------------- */
+
+.pagina-usuario {
+    min-height: calc(100vh - 70px);
+
+    padding: 20px 20px 50px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background-color: #ffffff;
+
+    background-image:
+        radial-gradient(
+            circle at 10px 10px,
+            rgba(100, 100, 100, 0.08) 3px,
+            transparent 4px
+        );
+
+    background-size: 55px 55px;
+}
+
+
+/* ---------------------------------------------------------
+   DECORAÇÕES DO CADASTRO
+   --------------------------------------------------------- */
+
+.pagina-usuario::before {
+    content: "";
+
+    position: fixed;
+
+    width: 190px;
+    height: 190px;
+
+    left: -100px;
+    top: 80px;
+
+    background-color: #73d6d5;
+
+    border-radius: 0 0 100px 0;
+
+    z-index: 0;
+}
+
+.pagina-usuario::after {
+    content: "";
+
+    position: fixed;
+
+    width: 170px;
+    height: 170px;
+
+    right: -80px;
+    bottom: -60px;
+
+    background-color: #ff725c;
+
+    border-radius: 80px 0 0 0;
+
+    z-index: 0;
+}
+
+
+/* ---------------------------------------------------------
+   FORMULÁRIO
+   --------------------------------------------------------- */
+
+.formulario-container {
+    width: 100%;
+
+    max-width: 500px;
+
+    text-align: center;
+
+    margin-bottom: 20px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.formulario-container h2 {
+    font-size: 21px;
+
+    margin-bottom: 5px;
+
+    color: #111;
+}
+
+.subtitulo {
+    font-size: 13px;
+
+    color: #777;
+
+    margin-bottom: 10px;
+}
+
+
+/* ---------------------------------------------------------
+   CAMPOS
+   --------------------------------------------------------- */
+
+.campo {
+    width: 100%;
+
+    margin-bottom: 8px;
+}
+
+.campo input {
+    width: 100%;
+
+    height: 37px;
+
+    padding: 0 15px;
+
+    border: none;
+
+    outline: none;
+
+    border-radius: 20px;
+
+    background-color: #ffffff;
+
+    box-shadow:
+        0 3px 8px rgba(0, 0, 0, 0.20);
+
+    font-size: 13px;
+}
+
+.campo input:focus {
+    box-shadow:
+        0 0 0 2px #19aeb8,
+        0 3px 8px rgba(0, 0, 0, 0.20);
+}
+
+
+/* ---------------------------------------------------------
+   BOTÃO CADASTRAR
+   --------------------------------------------------------- */
+
+.formulario-container button {
+    border: none;
+
+    margin-top: 2px;
+
+    padding: 7px 25px;
+
+    border-radius: 20px;
+
+    background-color: #f16d55;
+
+    color: white;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 4px 8px rgba(0, 0, 0, 0.18);
+
+    transition: 0.2s;
+}
+
+.formulario-container button:hover {
+    background-color: #e85c45;
+
+    transform: translateY(-2px);
+}
+
+
+/* ---------------------------------------------------------
+   PESSOAS CADASTRADAS
+   --------------------------------------------------------- */
+
+.pessoas-container {
+    width: 100%;
+
+    max-width: 620px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.pessoas-container h2 {
+    font-family: Georgia, serif;
+
+    font-size: 22px;
+
+    margin-bottom: 8px;
+
+    color: #222;
+}
+
+
+/* ---------------------------------------------------------
+   LISTA
+   --------------------------------------------------------- */
+
+.lista-pessoas {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+
+/* ---------------------------------------------------------
+   CARD DA PESSOA
+   --------------------------------------------------------- */
+
+.pessoa-card {
+    width: 100%;
+
+    min-height: 78px;
+
+    padding: 8px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    background-color: #ffffff;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.20);
+}
+
+
+/* ---------------------------------------------------------
+   AVATAR
+   --------------------------------------------------------- */
+
+.avatar {
+    width: 64px;
+    height: 64px;
+
+    flex-shrink: 0;
+
+    border-radius: 10px;
+
+    border: 2px solid #19aeb8;
+
+    background-color: #e8f8f8;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 27px;
+
+    color: #2199a3;
+}
+
+
+/* ---------------------------------------------------------
+   INFORMAÇÕES
+   --------------------------------------------------------- */
+
+.informacoes {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+
+    min-width: 0;
+}
+
+.email {
+    font-size: 14px;
+
+    color: #222;
+}
+
+.dados {
+    font-size: 12px;
+
+    color: #222;
+}
+
+.pet {
+    font-size: 11px;
+
+    color: #555;
+}
+
+
+/* ---------------------------------------------------------
+   AÇÕES
+   --------------------------------------------------------- */
+
+.acoes {
+    display: flex;
+
+    align-items: center;
+
+    gap: 4px;
+
+    font-size: 11px;
+}
+
+.acoes a {
+    color: #333;
+}
+
+.editar:hover {
+    color: #19aeb8;
+}
+
+.excluir:hover {
+    color: #e64d4d;
+}
+
+.associar:hover {
+    color: #19aeb8;
+}
+
+
+/* ---------------------------------------------------------
+   VOLTAR
+   --------------------------------------------------------- */
+
+.voltar {
+    margin-top: 18px;
+
+    color: #555;
+
+    font-size: 13px;
+
+    text-decoration: none;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.voltar:hover {
+    color: #19aeb8;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+    /* INDEX */
+
+    .principal {
+        flex-direction: column;
+
+        gap: 30px;
+
+        padding: 35px 20px;
+    }
+
+    .imagem-container {
+        width: 90%;
+
+        max-width: 420px;
+
+        height: 280px;
+    }
+
+    .cadastros {
+        width: 90%;
+
+        max-width: 450px;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .header {
+        padding-left: 15px;
+    }
+
+    .formulario-container {
+        max-width: 90%;
+    }
+
+    .pessoas-container {
+        max-width: 90%;
+    }
+
+    .pessoa-card {
+        align-items: flex-start;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    /* INDEX */
+
+    .logo-texto h1 {
+        font-size: 18px;
+    }
+
+    .logo-pata {
+        font-size: 30px;
+    }
+
+
+    /* CADASTRO */
+
+    .imagem-container {
+        height: 220px;
+    }
+
+    .botao {
+        min-height: 85px;
+
+        padding: 15px;
+    }
+
+    .botao .texto strong {
+        font-size: 16px;
+    }
+
+    .botao .texto span {
+        font-size: 12px;
+    }
+
+    .botao .icone {
+        width: 50px;
+        height: 50px;
+
+        font-size: 24px;
+    }
+
+    .pessoa-card {
+        padding: 7px;
+    }
+
+    .email {
+        font-size: 12px;
+    }
+
+    .dados {
+        font-size: 10px;
+    }
+}
